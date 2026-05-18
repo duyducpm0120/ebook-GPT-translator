@@ -1,8 +1,15 @@
-# ebook-GPT-translator
+# ebook-GPT-translator — Vietnamese Edition 🇻🇳
 
-Modernized ebook translation toolkit for TXT, EPUB, DOCX, PDF, and optional MOBI input. Supports Codex, Claude Code, and Gemini CLI as local translation providers alongside OpenAI/Azure APIs. This version upgrades the original single-file project into a package with a real CLI, modern OpenAI SDK support, multi-provider support, resume cache, glossary handling, tests, and release-ready packaging.
+Modernized ebook translation toolkit for TXT, EPUB, DOCX, PDF, and optional MOBI input. **Forked and customized for English-to-Vietnamese fiction translation with literary-quality output.** Supports Codex, Claude Code, and Gemini CLI as local translation providers alongside OpenAI/Azure/OpenRouter APIs. Features resume cache, glossary handling, term memory, and chapter-level consistency.
 
-[中文说明](README-zh.md)
+## Key Customizations for Vietnamese
+
+- **Default target language**: Vietnamese (instead of Simplified Chinese)
+- **Literary translation prompts**: system prompt optimized for novel/fiction translation
+- **Natural Vietnamese prose**: dialogue, idioms, metaphors handled with native fluency
+- **Character/place names preserved**: John Smith stays John Smith
+- **Included `novel_style_prompt.txt`** — a ready-to-use custom prompt for fiction
+- **Included `settings.toml.example`** — pre-configured for EN→VI with OpenRouter support
 
 ## Demo
 

@@ -1,22 +1,30 @@
 [provider]
 # kind: codex, claude, gemini, openai, azure, compatible, or mock
-kind = "codex"
-# model examples: gpt-5.2-codex (codex), claude-sonnet-4-6 (claude), gemini-3-pro-preview (gemini)
-model = "gpt-5.2-codex"
-reasoning_effort = "medium"
+kind = "compatible"
+# model: use any OpenAI-compatible model
+model = "deepseek/deepseek-v4-chat"
 api_key = ""
-api_base_url = ""
+api_base_url = "https://openrouter.ai/api/v1"
 api_version = ""
 api_mode = "auto"
-timeout_seconds = 120
+timeout_seconds = 180
 max_retries = 5
 proxy = ""
 
 [translation]
-target_language = "Simplified Chinese"
+target_language = "Vietnamese"
 bilingual_output = false
-custom_prompt = ""
-temperature = 0.2
+custom_prompt = """
+Đây là bản dịch tiểu thuyết. Hãy dịch với văn phong văn học Việt Nam:
+1. Giữ nguyên giọng kể chuyện (ngôi thứ nhất / thứ ba) và thì
+2. Câu văn trau chuốt, uyển chuyển, có nhịp điệu — phù hợp với văn xuôi văn học
+3. Đối thoại: dịch tự nhiên, đúng chất nhân vật
+4. Thành ngữ / ẩn dụ: tìm tương đương trong tiếng Việt
+5. Tên riêng: giữ nguyên (John Smith vẫn là John Smith)
+6. Không "Việt hóa" quá đà — giữ được không khí tác phẩm gốc
+7. Miêu tả cảnh vật / cảm xúc: dùng từ láy, từ tượng hình khi phù hợp
+"""
+temperature = 0.3
 max_output_tokens = 0
 preserve_line_breaks = true
 context_window_blocks = 6

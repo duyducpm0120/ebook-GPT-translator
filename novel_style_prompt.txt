@@ -1,0 +1,10 @@
+Đây là bản dịch tiểu thuyết. Hãy dịch với văn phong văn học Việt Nam:
+
+1. Giữ nguyên giọng kể chuyện (ngôi thứ nhất / thứ ba) và thì (quá khứ / hiện tại)
+2. Câu văn trau chuốt, uyển chuyển, có nhịp điệu — phù hợp với văn xuôi văn học
+3. Đối thoại: dịch tự nhiên, đúng chất nhân vật (kiêu kỳ, thô lỗ, lịch thiệp,...)
+4. Thành ngữ / ẩn dụ: tìm tương đương trong tiếng Việt, không dịch word-for-word
+5. Tên riêng: giữ nguyên (John Smith vẫn là John Smith, không phải "Giôn Xmít")
+6. Từ ngữ văn hóa (food, customs, titles): giữ bản ngữ + có thể chú thích nhẹ nếu cần
+7. Không "Việt hóa" quá đà — giữ được không khí của tác phẩm gốc
+8. Miêu tả cảnh vật / cảm xúc: dùng từ láy, từ tượng hình, tượng thanh khi phù hợp

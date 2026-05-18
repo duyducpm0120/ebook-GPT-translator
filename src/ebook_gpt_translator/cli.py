@@ -428,7 +428,7 @@ max_retries = 5
 proxy = ""
 
 [translation]
-target_language = "Simplified Chinese"
+target_language = "Vietnamese"
 bilingual_output = false
 custom_prompt = ""
 temperature = 0.2
@@ -473,9 +473,9 @@ openai-apikey =
 openai-api-base =
 api_version =
 api_mode = auto
-language = Simplified Chinese
+language = Vietnamese
 bilingual-output = false
-prompt = Please translate the following text into Simplified Chinese.
+prompt = Please translate the following text into Vietnamese.
 context-window-blocks = 4
 max_len = 5000
 max_token = 3500

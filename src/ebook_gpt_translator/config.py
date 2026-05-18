@@ -31,7 +31,7 @@ class ProviderConfig:
 
 @dataclass(slots=True)
 class TranslationConfig:
-    target_language: str = "Simplified Chinese"
+    target_language: str = "Vietnamese"
     bilingual_output: bool = False
     custom_prompt: str = ""
     temperature: float = 0.2
