@@ -15,3 +15,4 @@ venv/
 input/*.epub
 input/*.pdf
 
+settings.toml
