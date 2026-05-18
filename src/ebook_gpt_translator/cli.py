@@ -50,6 +50,8 @@ def translate(
     start_page: int = typer.Option(None, "--start-page", help="Start page for PDF input."),
     end_page: int = typer.Option(None, "--end-page", help="End page for PDF input."),
     output_dir: str = typer.Option(None, "--output-dir", help="Directory for generated files."),
+    start_chapter: int = typer.Option(None, "--start-chapter", help="Start chapter index (0-based, for parallel workers)."),
+    end_chapter: int = typer.Option(None, "--end-chapter", help="End chapter index (0-based, exclusive, for parallel workers)."),
     txt_only: bool = typer.Option(False, "--txt-only", help="Write only TXT output."),
     epub_only: bool = typer.Option(False, "--epub-only", help="Write only EPUB output."),
     skip_existing: bool = typer.Option(None, "--skip-existing", help="Skip if translated outputs already exist."),
@@ -93,7 +95,8 @@ def translate(
         console.print(f"[yellow]Skipping[/yellow] {input_path} because translated outputs already exist.")
         return
 
-    _, artifacts, stats = translate_file(input_path, config, force_resume=force_resume)
+    chapter_range = (start_chapter, end_chapter) if start_chapter is not None else None
+    _, artifacts, stats = translate_file(input_path, config, force_resume=force_resume, chapter_range=chapter_range)
     _print_summary(artifacts, stats, config)
 
 

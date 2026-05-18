@@ -12,4 +12,6 @@ dist/
 output/
 venv/
 .env
+input/*.epub
+input/*.pdf
 

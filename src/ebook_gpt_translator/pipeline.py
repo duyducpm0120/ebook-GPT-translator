@@ -4,6 +4,7 @@ import json
 import logging
 import re
 import hashlib
+import os
 import subprocess
 from collections import deque
 from dataclasses import asdict
@@ -73,11 +74,20 @@ def translate_file(
     config: AppConfig,
     progress_callback: ProgressCallback | None = None,
     force_resume: bool = False,
+    chapter_range: tuple[int, int] | None = None,
 ) -> tuple[Document, OutputArtifacts, UsageStats]:
     ensure_runtime_paths(config)
 
     document = load_document(input_path, config)
+    if chapter_range is not None:
+        start, end = chapter_range
+        document.chapters = document.chapters[start:end]
+        _pipeline_log.info("Restricted to chapters %d:%d (%d chapters)", start, end, len(document.chapters))
+        # Unique job_dir per range to avoid race conditions in parallel workers
+        config.runtime.job_dir = os.path.join(config.runtime.job_dir, f"ch{start:03d}-{end:03d}")
+        config.runtime.cache_path = os.path.join(os.path.dirname(config.runtime.cache_path), f"translation_{start:03d}-{end:03d}.sqlite3")
     _merge_small_blocks(document, config.chunking.max_chars, config.chunking.max_tokens, config.provider.model)
+    ensure_runtime_paths(config)
     provider = build_provider(config.provider, config.translation)
     glossary = Glossary.from_path(config.glossary.path, config.glossary.case_sensitive)
     cache = TranslationCache(Path(config.runtime.cache_path))
